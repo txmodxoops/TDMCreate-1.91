@@ -357,8 +357,7 @@ class TDMCreateFields extends XoopsObject
                 $form->addElement(new XoopsFormHidden('field_id[' . $field_id . ']', $field_id));
                 $form->addElement(new XoopsFormHidden('field_mid', $field_mid));
                 $form->addElement(new XoopsFormHidden('field_tid', $field_tid));
-                $form->addElement(new XoopsFormHidden('field_numb', $field_numb));
-
+                
                 $form->addElement(new TDMCreateFormLabel('<tr class="' . $class . '">'));
                 // Index ID
                 $form->addElement(new TDMCreateFormLabel('<td class="center">' . $id . '</td>'));
