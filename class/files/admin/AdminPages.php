@@ -88,7 +88,7 @@ class AdminPages extends TDMCreateFile
      * @param $fpif
      * @return string
      */
-    public function getAdminPagesHeader($moduleDirname, $table, $fpif)
+    public function getAdminPagesHeader($moduleDirname, $tableName, $fpif)
     {
         $ucfModuleDirname = ucfirst($moduleDirname);
         $ret              = <<<EOT
@@ -98,7 +98,7 @@ include_once 'header.php';
 // Request {$fpif}
 \${$fpif} = XoopsRequest::getInt('{$fpif}');
 // Get instance of module
-\${$moduleDirname} = {$ucfModuleDirname}Helper::getInstance();\n
+\${$tableName}Handler =& \${$moduleDirname}->getHandler('{$tableName}');
 // Switch options
 switch (\$op)
 {\n
