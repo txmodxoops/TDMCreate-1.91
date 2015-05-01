@@ -150,23 +150,21 @@ switch ($op) {
         }
         //
         $tables =& $tdmcreate->getHandler('tables');
-        // Checking if table name exist
-        $criteria = new CriteriaCompo();
-        $criteria->add(new Criteria('table_mid', $tableMid));
-        $table_name_search = $tables->getObjects($criteria);
-        //unset($criteria);
-        foreach (array_keys($table_name_search) as $t) {
-            if ($table_name_search[$t]->getVar('table_name') === $_POST['table_name']) {
-                redirect_header('tables.php?op=new', 3, sprintf(_AM_TDMCREATE_ERROR_TABLE_NAME_EXIST, $_POST['table_name']));
-
-                return false;
-            }
-        }
         //
         if (isset($tableId)) {
-            $tablesObj =& $tables->get($tableId);
-        } else {
-            $tablesObj =& $tables->create();
+            $tablesObj =& $tables->get($tableId);			
+        } else {            
+         			// Checking if table name exist
+         			$criteria = new CriteriaCompo();
+         			$criteria->add(new Criteria('table_mid', $tableMid));
+         			$table_name_search = $tables->getObjects($criteria);
+         			//unset($criteria);
+         			foreach (array_keys($table_name_search) as $t) {
+         				   if ($table_name_search[$t]->getVar('table_name') === $_POST['table_name']) {
+         				  	redirect_header('tables.php?op=new', 3, sprintf(_AM_TDMCREATE_ERROR_TABLE_NAME_EXIST, $_POST['table_name']));
+         				   }
+         			}
+     			    $tablesObj =& $tables->create();
         }
         $order = $tablesObj->isNew() ? $tableOrder + 1 : $tableOrder;
         // Form save tables
