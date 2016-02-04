@@ -87,18 +87,18 @@ $modversion['templates'][] = array('file' => 'tdmcreate_morefiles.tpl', 'descrip
 // Mysql file
 $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 // Tables
-$t = 1;
-$modversion['tables'][$t] = 'tdmcreate_settings';
-$modversion['tables'][$t] = 'tdmcreate_modules';
-$modversion['tables'][$t] = 'tdmcreate_tables';
-$modversion['tables'][$t] = 'tdmcreate_fields';
-$modversion['tables'][$t] = 'tdmcreate_languages';
-$modversion['tables'][$t] = 'tdmcreate_fieldtype';
-$modversion['tables'][$t] = 'tdmcreate_fieldattributes';
-$modversion['tables'][$t] = 'tdmcreate_fieldnull';
-$modversion['tables'][$t] = 'tdmcreate_fieldkey';
-$modversion['tables'][$t] = 'tdmcreate_fieldelements';
-$modversion['tables'][$t] = 'tdmcreate_morefiles';
+$t = 0;
+$t++; $modversion['tables'][$t] = 'tdmcreate_settings';
+$t++; $modversion['tables'][$t] = 'tdmcreate_modules';
+$t++; $modversion['tables'][$t] = 'tdmcreate_tables';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fields';
+$t++; $modversion['tables'][$t] = 'tdmcreate_languages';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fieldtype';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fieldattributes';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fieldnull';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fieldkey';
+$t++; $modversion['tables'][$t] = 'tdmcreate_fieldelements';
+$t++; $modversion['tables'][$t] = 'tdmcreate_morefiles';
 unset($t);
 // Scripts to run upon installation or update
 $modversion['onInstall'] = 'include/install.php';
